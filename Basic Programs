@@ -1,0 +1,113 @@
+//Reading 2 numbers and printing the number range
+
+#include <stdio.h>
+int main() {
+    // variable declaration
+	int first_number=0,second_number=0;
+	
+    //input and output section
+	printf("enter the first number: ");
+	scanf("%d",&first_number);
+	printf("the first number is: %d ",first_number);
+	printf("\nenter the second number: ");
+	scanf("%d",&second_number);
+	printf("the second number is: %d ",second_number);
+	
+    //new line
+	printf("\n");
+	
+    //for loop
+	for(int i=first_number; i<second_number; i++) {
+		printf("%d\t",i);
+	}
+	return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+//Swapping numbers
+
+#include <stdio.h>
+int main() {
+// variable declaration
+	int first_number=0,second_number=0,temporary_number=0;
+	
+//input and output section
+	printf("enter the first number: ");
+	scanf("%d",&first_number);
+	printf("the first number is: %d ",first_number);
+	printf("\nenter the second number: ");
+	scanf("%d",&second_number);
+	printf("the second number is: %d ",second_number);
+	
+//swapping logic
+	temporary_number=first_number;
+	first_number=second_number;
+	second_number=temporary_number;
+	
+//output of the swapping logic
+	printf("\ntAFTER SWAPPING:The first number is %d and the second number is
+	       %d",first_number,second_number)
+	       return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+//Addition of 2 numbers using function
+
+#include <stdio.h>
+
+//function to add 2 numbers
+void add(int x, int y) {
+	int sum=x+y;
+	printf("\nthe sum of %d and %d is %d",x,y,sum);
+}
+
+int main() {
+// variable declaration
+	int first_number=0,second_number=0;
+	
+//input and output section
+	printf("enter the first number: ");
+	scanf("%d",&first_number);
+	printf("the first number is: %d ",first_number);
+	printf("\nenter the second number: ");
+	scanf("%d",&second_number);
+	printf("the second number is: %d ",second_number);
+	
+//calling add function
+	add(first_number,second_number);
+	return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+//Fibonacci series using function
+
+#include <stdio.h>
+
+//function to add 2 numbers
+void fibonacci(int x) {
+	int fib1=0,fib2=1,fib3=0;
+	for(int i=0; i<x; i++) {
+		printf("%d\t",fib1);
+		fib3=fib1+fib2;
+		fib1=fib2;
+		fib2=fib3;
+	}
+}
+
+int main() {
+// variable declaration
+	int fibonacci_number=0;
+	
+//input and output section
+	printf("enter the fibonacci number: ");
+	scanf("%d",&fibonacci_number);
+	
+//calling fibonacci function
+	fibonacci( fibonacci_number);
+	return 0;
+}
+
+
