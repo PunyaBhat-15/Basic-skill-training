@@ -1,0 +1,44 @@
+/*Write a C program that accepts coin denominations (in descending order) and a target value, 
+then determines how many coins of a denomination are required to make the given value and displays the frequency of coins used.*/
+
+#include<stdio.h>
+int main() {
+	int coind,coins[100],i,j,max=0,value,flag=1,count=0,frq[100];
+	printf("enter the coin denomination: ");
+	scanf("%d",&coind);
+	printf("enter coin denominatio in descending order: ");
+	for(i=0; i<coind; i++) {
+		scanf("%d",&coins[i]);
+	}
+	printf("enter value to make: ");
+	scanf("%d",&value);
+	for(i=0; i<coind; i++) {
+		count=0;
+		for(j=i; j<coind; j++) {
+			max+=coins[i];
+			count++;
+			if(max==value) {
+				frq[i]=count;
+				printf("\n f[i] %d : %d \t",i,frq[i]);
+				flag=0;
+				break;
+			} else if(max>value) {
+				frq[i]=count;
+				printf("\n f[i] %d : %d \t",i,frq[i]);
+				max=max-coins[i];
+			}
+			else {
+				frq[i]=count;
+				printf("\n f[i] %d : %d \t",i,frq[i]);
+			}
+		}
+		if(!flag)
+			break;
+	}
+	for(i=0; i<coind; i++) {
+		printf("%d \t",frq[i]);
+	}
+
+
+	return 0;
+}
