@@ -1,0 +1,33 @@
+//CASE BASED PROGRAMS
+/*Write a C program to generate a student marks report. 
+The program should first ask the user to enter the number of students and the number of subjects. 
+Then, using a two-dimensional array, it should accept the marks of each student for every subject. 
+Finally, the program should display the marks of each student subject-wise in a formatted report.*/
+
+#include <stdio.h>
+int main() {
+	int students=0,subjects=0,i,j;
+	printf("enter number of students:\n");
+	scanf("%d",&students);
+	printf("enter the number or subjects:\n");
+	scanf("%d",&subjects);
+	printf("\n");
+	int class[students][subjects];
+	for(i=0; i<students; i++) {
+		printf("enter the marks of student %d : \n",i+1);
+		for(j=0; <subjects; j++) {
+			printf("enter marks for subject %d:\t",j+1);
+			scanf("%d",&class[i][j]);
+		}
+	}
+	printf("\n");
+	printf("the marks report:\n");
+	for(i=0; i<students; i++) {
+		printf(" marks of student %d : \n",i+1);
+		for(j=0; j<subjects; j++) {
+			printf("subject %d : %d\n ",j+1,class[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
