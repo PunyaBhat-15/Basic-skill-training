@@ -1,0 +1,68 @@
+// PROGRAM: SPIRAL MATRIX
+#include <stdio.h>
+
+int main() {
+    int array[50][50];
+    int dimen = 0, i = 0, j = 0;
+
+    // Input the dimension of the square matrix
+    printf("Enter the dimension: ");
+    scanf("%d", &dimen);
+
+    // Input the elements of the matrix
+    printf("Enter the elements:\n");
+    for (i = 0; i < dimen; i++) {
+        for (j = 0; j < dimen; j++) {
+            scanf("%d", &array[i][j]);
+        }
+    }
+
+    // Display the matrix
+    printf("-----------------\n");
+    for (i = 0; i < dimen; i++) {
+        for (j = 0; j < dimen; j++) {
+            printf("%d\t", array[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("--------------------\n");
+
+    // Initialize boundaries for spiral traversal
+    int top = 0, bottom = dimen - 1;
+    int left = 0, right = dimen - 1;
+
+    // Spiral traversal of the matrix
+    while (top <= bottom && left <= right) {
+
+        // Print top row from left to right
+        for (i = left; i <= right; i++) {
+            printf("%d\t", array[top][i]);
+        }
+        top++;
+
+        // Print right column from top to bottom
+        for (i = top; i <= bottom; i++) {
+            printf("%d\t", array[i][right]);
+        }
+        right--;
+
+        // Print bottom row from right to left
+        if (top <= bottom) {
+            for (i = right; i >= left; i--) {
+                printf("%d\t", array[bottom][i]);
+            }
+            bottom--;
+        }
+
+        // Print left column from bottom to top
+        if (left <= right) {
+            for (i = bottom; i >= top; i--) {
+                printf("%d\t", array[i][left]);
+            }
+            left++;
+        }
+    }
+
+    return 0;
+}
