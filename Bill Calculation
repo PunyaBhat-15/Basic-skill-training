@@ -1,0 +1,35 @@
+/*Write a C program to generate a customer bill. 
+The program should accept the customer’s name, price of an item, and quantity purchased. 
+It should calculate the total bill amount and apply a discount based on the following conditions:
+   1)If the total bill is greater than 3000 and less than or equal to 5000, apply a 10% discount.
+  2)If the total bill is greater than 5000, apply a 20% discount.
+Finally, display the customer name, total bill amount, discount applied, and the net amount to be paid.*/
+
+#include<stdio.h>
+int main() {
+	float Price=0,Quantity=0,totalPrice=0,discount=0,num;
+	char name[20];
+	printf("Enter the Customer name: ");
+	scanf("%s",name);
+	printf("Enter the price: ");
+	scanf("%f",&Price);
+	printf("Enter the quantity: ");
+	scanf("%f",&Quantity);
+	totalPrice=Price*Quantity;
+	printf("-----BILL-----\n");
+	if(totalPrice>3000 && totalPrice<=5000) {
+		discount=totalPrice*0.1;
+		printf("Customer Name: %s\n",name);
+		printf("Total Bill: %f\n",totalPrice);
+		printf("Discount(10%) : %f\n",discount);
+		printf("Net amount: %f\n",totalPrice-discount);
+	} else if(totalPrice>5000) {
+		discount=totalPrice*0.2;
+		printf("Customer Name: %s\n",name);
+		printf("Total Bill: %f\n",totalPrice);
+		printf("Discount( 20%) : %f\n",discount);
+		printf("Net amount: %f\n",totalPrice-discount);
+
+	}
+	return 0;
+}
