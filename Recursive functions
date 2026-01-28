@@ -1,0 +1,73 @@
+//FACTORIAL OF A NUMBER USING RECURSIVE APPROACH
+#include<stdio.h>
+int fact(int n {
+	if( n-1==0) {
+		return n;
+	} else {
+		return n*fact(n-1);
+	}
+}
+int main() {
+	int n,factorial=0;
+	scanf("%d",&n);
+	factorial=fact(n);
+	printf("factorial %d",factorial);
+	return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//FACTORIAL OF A NUMBER USING RECURSIVE APPROACH IN ONE LINE
+#include<stdio.h>
+int fact(n) {
+	return (n==1 || n==0)? 1:n*fact(n-1);
+}
+int main() {
+	int n,factorial=0;
+	scanf("%d",&n);
+	factorial=fact(n);
+	printf("factorial %d",factorial);
+	return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//GCD OF A NUMBER USING RECURSIVE APPROACH
+#include<stdio.h>
+int GCD(int a,int b) {
+	if(a!=b) {
+		if(a>b) {
+			return GCD(a-b,b);
+		} else {
+			return GCD(a,b-a);
+		}
+	} else {
+		printf("invalid input");
+	}
+}
+int main() {
+	int a,b,num=0;
+	scanf("%d %d",&a,&b);
+	num=GCD(a,b);
+	printf("gcd is : %d",num);
+	return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//FIBONACCI OF A NUMBER USING RECURSIVE APPROACH
+#include<stdio.h>
+int fibo(int fib1,int fib2,int fib3,int n) {
+	if(n!=0) {
+		printf("%d\t",fib1);
+		return fibo(fib2,fib3,fib3=fib1+fib2,n-1);
+	}
+}
+int main() {
+	int num=0;
+	scanf("%d",&num);
+	fibo(0,1,0,num);
+	return 0;
+}
+         
